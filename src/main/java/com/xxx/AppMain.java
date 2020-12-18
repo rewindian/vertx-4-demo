@@ -27,9 +27,11 @@ public class AppMain {
             tempVertx.close();
             JsonObject result = ar.result();
             LOGGER.info("配置读取成功：" + result.encode());
-            JsonObject serverConfig = result.getJsonObject("server");
-            JsonObject vertxConfig = result.getJsonObject("vertx");
-            JsonObject customConfig = result.getJsonObject("custom");
+            //默认读取dev开发环境配置
+            JsonObject envConfig = result.getJsonObject("dev");
+            JsonObject serverConfig = envConfig.getJsonObject("server");
+            JsonObject vertxConfig = envConfig.getJsonObject("vertx");
+            JsonObject customConfig = envConfig.getJsonObject("custom");
             Vertx vertx = Vertx.vertx(new VertxOptions(vertxConfig));
             VertxUtil.init(vertx);
             Router router = new RouterHandlerFactory(customConfig.getString("routerLocations"), serverConfig.getString("contextPath")).createRouter();
