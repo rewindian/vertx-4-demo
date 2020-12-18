@@ -1,0 +1,20 @@
+{
+  "server": {
+    "port": 8088,
+    "contextPath": "/vertx-4"
+  },
+  "vertx": {
+    "eventLoopPoolSize": 2,
+    "workerPoolSize": 20,
+    "blockedThreadCheckInterval": 999999999,
+    "maxEventLoopExecuteTime": 999999999,
+    "eventBusOptions": {
+      "connectTimeout": 1800000
+    }
+  },
+  "custom": {
+    "asyncServiceInstances": 1,
+    "routerLocations": "com.xxx.web",
+    "handlerLocations":"com.xxx.service"
+  }
+}
