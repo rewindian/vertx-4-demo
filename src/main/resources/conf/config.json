@@ -24,9 +24,12 @@
       "port": 8108,
       "contextPath": "/vertx4"
     },
+    "http": {
+      "maxWebSocketFrameSize": 1000000
+    },
     "vertx": {
-      "eventLoopPoolSize": 2,
-      "workerPoolSize": 20,
+      "eventLoopPoolSize": 4,
+      "workerPoolSize": 40,
       "eventBusOptions": {
         "connectTimeout": 6000
       }

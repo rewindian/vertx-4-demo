@@ -18,6 +18,6 @@ public class MainVerticle extends AbstractVerticle {
     public void start() {
         VertxUtil.init(vertx);
         Router router = new RouterHandlerFactory("com.xxx.web").createRouter();
-        DeployVertxServer.startDeploy(router, "com.xxx.service", 8088, 1);
+        DeployVertxServer.startDeploy(router, "com.xxx.service", 8088, 1, "dev");
     }
 }
