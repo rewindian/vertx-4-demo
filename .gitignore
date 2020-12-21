@@ -5,3 +5,5 @@
 *.iml
 
 /src/main/generated
+
+/target
